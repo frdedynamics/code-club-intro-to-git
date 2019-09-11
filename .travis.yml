@@ -4,7 +4,7 @@ dist: xenial
 notifications:
   slack:
     rooms:
-      secure: $slack_not
+      secure: frdedynamics:dOBWGmBdQtxKuB609vCKT33C#travis
     on_success: change
     on_failure: always
 
