@@ -3,4 +3,4 @@ def two_plus_two():
 
 
 def four_plus_four():
-    return 4
+    return 5
