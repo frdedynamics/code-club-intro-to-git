@@ -19,6 +19,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: Check for plain text password
+        run: |
+          search_result=$(grep -r -i -n "password[=:]" $GITHUB_WORKSPACE)
+
+          if [[ $search_result ]]; then
+              echo "Sensitive data found! Check it out! \n $search_result"
+              exit 1
+          else
+              echo "Sensitive data not found, everytings ok"
+          fi
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
