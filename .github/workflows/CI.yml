@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Check for plain text password
         run: |
-          search_result=$(grep -r -i -n "test_password[=:]" $GITHUB_WORKSPACE)
+          search_result=$(grep -r -i -n -o -E "(password|pwd|pass)[[:space:]]*(=|:)" $GITHUB_WORKSPACE)
 
           if [[ $search_result ]]; then
               echo "Sensitive data found! Check it out! \n $search_result"
