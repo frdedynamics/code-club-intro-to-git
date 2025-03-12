@@ -27,7 +27,7 @@ jobs:
               echo "Sensitive data found! Check it out! \n $search_result"
               exit 1
           else
-              echo "Sensitive data not found, everytings ok"
+              echo "Sensitive data not found, everything's ok"
           fi
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
